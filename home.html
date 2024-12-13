@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightPaths - Home</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f9;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #007BFF, #00C4FF);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo1-image {
+    width: 50px; 
+    height: 70px;
+    object-fit: contain; 
+}
+
+        .bright {
+            color: #FFD700;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links ul li a:hover {
+            color: #FFD700;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            background-image: url(WhatsApp\ Image\ 2024-12-13\ at\ 6.52.03\ PM.jpeg);
+            background-size: cover;
+            background-position: center;
+            color: rgb(34, 27, 27);
+            text-align: center;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #FFD700;
+            color: #007BFF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .hero-section button:hover {
+            background-color: #FFC107;
+            transform: scale(1.05);
+        }
+
+        /* Section */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #007BFF;
+            
+            
+           
+        }
+        .section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #007BFF;
+            
+        }
+        .section h4 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #007BFF;
+            
+            
+        }
+        .section h5 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #007BFF;
+            
+            
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .section button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .section button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Cards Section */
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #007BFF;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .card button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Accessibility Controls */
+        .accessibility-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .accessibility-controls button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        .accessibility-controls button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #007BFF, #00C4FF);
+            color: white;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo">
+            <span class="bright">BRIGHT</span><span class="paths">PATHS</span>
+            <img src="images__1_-removebg-preview.png" alt="Logo Image" class="logo1-image">
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#internships">Internships</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#scholarships">Scholarships</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Welcome to BrightPaths</h1>
+        <p>Your gateway to a brighter future starts here.</p>
+        <button>Get Started</button>
+    </section>
+
+    <!-- Internships Section -->
+    <section id="internships" class="section">
+        <h2>Explore Internships</h2>
+        <p>Kickstart your career with top-notch internships.</p>
+        <button>View Internships</button>
+    </section>
+
+    <!-- Jobs Section -->
+    <section id="jobs" class="section">
+        <h3>Discover Job Opportunities</h3>
+        <p>Find the perfect job that matches your skills.</p>
+        <button>Browse Jobs</button>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section">
+        <h4>Learn with Online Courses</h4>
+        <p>Upgrade your skills with our curated courses.</p>
+        <button>Explore Courses</button>
+    </section>
+
+    <!-- Scholarships Section -->
+    <section id="scholarships" class="section">
+        <h5>Apply for Scholarships</h5>
+        <p>Get financial support for your learning journey.</p>
+        <button>Find Scholarships</button>
+    </section>
+
+    <!-- Cards Section -->
+    <div class="cards-container">
+        <div class="card">
+            <h3>Skill Development</h3>
+            <p>Enhance your expertise with our tailored programs.</p>
+            <button>Know More</button>
+        </div>
+        <div class="card">
+            <h3>Online Learning</h3>
+            <p>Access a variety of online courses at your fingertips.</p>
+            <button>Know More</button>
+        </div>
+        <div class="card">
+            <h3>Job Placements</h3>
+            <p>Get placed in top companies globally.</p>
+            <button>Know More</button>
+        </div>
+        <div class="card">
+            <h3>Scholarship Programs</h3>
+            <p>Discover and apply for the best scholarships available.</p>
+            <button>Know More</button>
+        </div>
+        <div class="card">
+            <h3>Testimonials</h3>
+            <p>Read success stories from our users.</p>
+            <button>View Testimonials</button>
+        </div>
+        <div class="card">
+            <h3>Resources</h3>
+            <p>Explore our extensive library of learning materials.</p>
+            <button>View Resources</button>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <h2>What Our Users Say</h2>
+        <p>"BrightPaths helped me land my dream job!" - John Doe</p>
+        <p>"The courses offered here are top-notch." - Jane Smith</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Have questions or need support? Reach out to us.</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Accessibility Controls -->
+    <div class="accessibility-controls">
+        <button id="contrast-toggle">Toggle Contrast</button>
+        <button id="zoom-in">Zoom In</button>
+        <button id="zoom-out">Zoom Out</button>
+        <button id="read-text">Read Selected Text</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 BrightPaths. All Rights Reserved.</p>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+</html>
