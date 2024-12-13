@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightPaths</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .high-contrast {
+            background-color: black;
+            color: white;
+        }
+        .zoom {
+            transform: scale(1);
+            transform-origin: 0 0;
+        }
+        .accessibility-controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .accessibility-controls button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <span class="bright">BRIGHT</span><span class="paths">PATHS</span>
+            <img src="images__1_-removebg-preview.png" alt="Logo Image" class="logo-image">
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+
+                <li><a href="#">Internships <span class="dropdown-icon">&#9662;</span></a></li>
+                <li><a href="#">Jobs <span class="dropdown-icon">&#9662;</span></a></li>
+                <li><a href="#">Courses <span class="offer-tag">OFFER</span> <span class="dropdown-icon">&#9662;</span></a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button class="search-btn">🔍</button>
+            </div>
+            <div class="actions">
+                <button id="open-login-modal">Login</button>
+                
+
+            </div>
+            <button class="signup-btn candidate">Candidate Sign-up</button>
+            <button class="signup-btn employer">Employer Sign-up</button>
+
+
+        </div>
+    </header>
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="close-login-modal">&times;</button>
+            <div class="modal-header">Login</div>
+            <form action="login-handler.php" method="POST">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title">Make your <span class="highlight">dream</span> career a reality</h1>
+            <p class="hero-description">Empowering everyone with accessible learning and job opportunities.</p>
+            <button class="hero-button">Learn More</button>
+        </section>
+
+        <section class="cards-section">
+            <div class="card" id="card-1">
+                <h3>SKILL</h3>
+                <p>Development Courses</p>
+                <button class="know-more-btn">Know More</button>
+            </div>
+            <div class="card" id="card-2">
+                <h3>ONLINE</h3>
+                <p>Courses</p>
+                <button class="know-more-btn">Know More</button>
+            </div>
+            <div class="card" id="card-3">
+                <h3>JOB</h3>
+                <p>Opportunities</p>
+                <button class="know-more-btn">Know More</button>
+            </div>
+            <div class="card" id="card-4">
+                <h3>SCHOLARSHIP</h3>
+                <p>Opportunities</p>
+                <button class="know-more-btn">Know More</button>
+            </div>
+        </section>
+        
+        <div class="accessibility-controls">
+            <button id="contrast-toggle">&#9728; Contrast</button>
+            <button id="zoom-in">&#10133; Zoom In</button>
+            <button id="zoom-out">&#10134; Zoom Out</button>
+            <button id="read-text">&#128266; Read</button>
+        </div>
+    </main>
+
+    
+    <script>
+        // Text-to-Speech Functionality
+        document.getElementById('read-text').addEventListener('click', () => {
+            const selectedText = window.getSelection().toString();
+            if (selectedText) {
+                const utterance = new SpeechSynthesisUtterance(selectedText);
+                speechSynthesis.speak(utterance);
+            } else {
+                alert('Please select some text to read aloud.');
+            }
+        });
+
+        // Contrast Toggle
+        const contrastToggle = document.getElementById('contrast-toggle');
+        contrastToggle.addEventListener('click', () => {
+            document.body.classList.toggle('high-contrast');
+        });
+
+        // Zoom In/Out
+        let zoomLevel = 1;
+        const zoomIn = document.getElementById('zoom-in');
+        const zoomOut = document.getElementById('zoom-out');
+
+        zoomIn.addEventListener('click', () => {
+            zoomLevel += 0.1;
+            document.body.style.transform = `scale(${zoomLevel})`;
+        });
+
+        zoomOut.addEventListener('click', () => {
+            if (zoomLevel > 0.5) {
+                zoomLevel -= 0.1;
+                document.body.style.transform = `scale(${zoomLevel})`;
+            }
+        });
+        // Modal script
+        const loginModal = document.getElementById('login-modal');
+        const openLoginModal = document.getElementById('open-login-modal');
+        const closeLoginModal = document.getElementById('close-login-modal');
+
+        openLoginModal.addEventListener('click', () => {
+            loginModal.style.display = 'flex';
+        });
+
+        closeLoginModal.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+        const loginForm = document.querySelector('.modal-content form');
+
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();  // Prevent the default form action
+
+        const email = loginForm.email.value;
+        const password = loginForm.password.value;
+
+        if (email && password) {
+            alert('Login Successful');
+            window.location.href = 'home.html';  // Redirect to home page
+        } else {
+            alert('Please fill in both email and password.');
+        }
+    });
+    </script>
+    
+</body>
+</html>
+
+
